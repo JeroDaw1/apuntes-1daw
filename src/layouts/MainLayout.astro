@@ -16,7 +16,7 @@ const { title } = Astro.props
   </head>
   <body class='bg-[#111827] min-h-screen flex flex-col'>
     <Header title={title} />
-    <div class='flex-1 h-svh'>
+    <div class='flex-1 h-screen grid grid-cols-[250px_1fr]'>
       <Navbar />
       <main>
         <slot />

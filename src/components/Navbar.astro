@@ -1,1 +1,26 @@
-<nav>Navbar works!</nav>
+---
+interface NavItem {
+  href: string
+  text: string
+}
+
+const navItems: NavItem[] = [
+  { href: '/', text: 'Inicio' },
+  { href: '/about', text: 'Acerca de' },
+  { href: '/tema01', text: 'Tema 01' }
+]
+---
+
+<nav class='bg-[#1F2937] text-white p-4'>
+  <ul class='flex flex-col gap-2'>
+    {
+      navItems.map(item => (
+        <li class='bg-[#374151] p-2'>
+          <a href={item.href} class='block w-full'>
+            {item.text}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
