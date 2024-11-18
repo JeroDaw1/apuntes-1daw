@@ -15,16 +15,12 @@ const { title } = Astro.props
     <title>{title}</title>
   </head>
   <body class='bg-[#111827] h-screen flex flex-col'>
-    <Header title={title} class='sticky top-0 z-10 bg-[#1f2937]' />
-
-    <div class='flex h-full'>
-      <Navbar class='w-[250px] overflow-y-auto h-full bg-[#1f2937]' />
-
-      <main class='p-2 flex-1 overflow-y-auto bg-[#1f2937]'>
+    <div class='min-h-screen bg-gray-900 text-gray-100' data-id='1'>
+      <Header title={title} />
+      <main class='container mx-auto px-4 py-8' data-id='6'>
         <slot />
       </main>
+      <Footer />
     </div>
-
-    <Footer class='sticky bottom-0 z-10 bg-[#1f2937]' />
   </body>
 </html>
