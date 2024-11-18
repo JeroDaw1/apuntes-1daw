@@ -1,7 +1,101 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro'
+
+const codeText = `// 404 Not Found
+    function findPage(url) {
+      if (url === 'current_page') {
+        throw new Error('Page not found');
+      }
+      return 'Success';
+    }
+    
+    try {
+      findPage('current_page');
+    } catch (error) {
+      console.error('Error 404:', error.message);
+      // Redirecting to home...
+    }`
 ---
 
-<MainLayout title='Apuntes 1 DAW - 404'>
-  <h1>404 not found</h1>
+<MainLayout title=''>
+  <div
+    class='h-full bg-gray-900 text-gray-300 flex items-center justify-center pt-16'
+  >
+    <div class='w-full max-w-2xl'>
+      <div class='bg-gray-800 rounded-lg shadow-xl overflow-hidden'>
+        <div class='border-b border-gray-700 p-4 flex items-center space-x-2'>
+          <button
+            class='w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors duration-200 flex items-center justify-center group'
+            ><svg
+              class='w-2 h-2 text-black opacity-0 group-hover:opacity-100 transition-opacity duration-200'
+              viewBox='0 0 24 24'
+              fill='none'
+              xmlns='http://www.w3.org/2000/svg'
+              ><path
+                d='M18 6L6 18M6 6L18 18'
+                stroke='currentColor'
+                stroke-width='2'
+                stroke-linecap='round'
+                stroke-linejoin='round'></path></svg
+            ></button
+          ><button
+            class='w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-600 transition-colors duration-200 flex items-center justify-center group'
+            ><svg
+              class='w-2 h-2 text-black opacity-0 group-hover:opacity-100 transition-opacity duration-200'
+              viewBox='0 0 24 24'
+              fill='none'
+              xmlns='http://www.w3.org/2000/svg'
+              ><path
+                d='M5 12H19'
+                stroke='currentColor'
+                stroke-width='2'
+                stroke-linecap='round'
+                stroke-linejoin='round'></path></svg
+            ></button
+          ><button
+            class='w-3 h-3 rounded-full bg-green-500 hover:bg-green-600 transition-colors duration-200 flex items-center justify-center group'
+            ><svg
+              class='w-2 h-2 text-black opacity-0 group-hover:opacity-100 transition-opacity duration-200'
+              viewBox='0 0 24 24'
+              fill='none'
+              xmlns='http://www.w3.org/2000/svg'
+              ><path
+                d='M9 9L15 15M15 9L9 15'
+                stroke='currentColor'
+                stroke-width='2'
+                stroke-linecap='round'
+                stroke-linejoin='round'></path></svg
+            ></button
+          ><span class='ml-2 text-sm text-gray-400'>error.js</span>
+        </div><pre
+          class='p-4 font-mono text-sm'><code>
+    {codeText}
+    </code></pre>
+      </div><div class='mt-8 text-center'>
+        <h1 class='text-4xl font-bold text-gray-100 mb-4'>
+          404 - Página no encontrada
+        </h1><p class='text-gray-400 mb-8'>
+          Parece que has intentado acceder a una página que no existe.
+        </p><a href='/' rel='ugc'
+          ><button
+            class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input hover:text-accent-foreground h-10 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-gray-100'
+            ><svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='24'
+              height='24'
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              stroke-width='2'
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              class='lucide lucide-home mr-2 h-4 w-4'
+              ><path d='m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'
+              ></path><polyline points='9 22 9 12 15 12 15 22'></polyline></svg
+            > Volver al inicio
+          </button></a
+        >
+      </div>
+    </div>
+  </div>
 </MainLayout>
