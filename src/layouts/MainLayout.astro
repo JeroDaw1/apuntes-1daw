@@ -14,14 +14,21 @@ const { title } = Astro.props
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class='bg-[#111827] min-h-screen flex flex-col'>
-    <Header title={title} />
-    <div class='flex-1 h-screen grid grid-cols-[250px_1fr]'>
-      <Navbar />
-      <main>
+  <body class='bg-[#111827] h-screen flex flex-col'>
+    <!-- Header fijo en la parte superior -->
+    <Header title={title} class='sticky top-0 z-10 bg-[#1f2937]' />
+
+    <div class='flex h-full'>
+      <!-- Navbar con ancho fijo de 250px y desplazamiento vertical -->
+      <Navbar class='w-[250px] overflow-y-auto h-full bg-[#1f2937]' />
+
+      <!-- Main ocupa el resto del espacio con scroll si es necesario -->
+      <main class='flex-1 overflow-y-auto bg-[#1f2937]'>
         <slot />
       </main>
     </div>
-    <Footer />
+
+    <!-- Footer fijo en la parte inferior -->
+    <Footer class='sticky bottom-0 z-10 bg-[#1f2937]' />
   </body>
 </html>
